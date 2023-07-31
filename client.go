@@ -220,6 +220,7 @@ func (d *Dialer) DialContext(ctx context.Context, urlStr string, requestHeader h
 		case k == "Host":
 			if len(vs) > 0 {
 				req.Host = vs[0]
+				req.Header[k] = vs
 			}
 		case k == "Upgrade" ||
 			k == "Connection" ||
